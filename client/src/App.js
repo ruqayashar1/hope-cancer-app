@@ -1,22 +1,30 @@
+import React from 'react';
+// import { Routes, Route,useLocation} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import HomePage from './components/HomePage';
+import Navbar from './components/Navbar';
+
+
+
 
 function App() {
+  // const [signUpData, setSignUpData] = useState([]);
+  // const [trainData, setTrainData] = useState([]);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          WELCOME HOME
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <Navbar />  
+     <HomePage />
+     {/* <Routes>
+     {/* <Route path='/' element={<Signup signUpData={signUpData}/>}/> */}
+          {/* <Route path="/signin" element={< signinform data={trainData} />} />
+
+     </Routes> */} 
       </header>
     </div>
   );
