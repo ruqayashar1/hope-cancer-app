@@ -31,11 +31,15 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav>
-      <ul className="navbar-list">
-        <li className="navbar-item">
-          <Link to="/signup" className="navbar-link">Sign Up</Link>
+        
+        <ul className="navbar-list">
+        <li className={"navbar-item" }>
+          <Link to="/signup" className="navbar-link">sign up</Link>
         </li>
-        <li className="navbar-item">
+        <li className={"navbar-item" }>
+          <Link to="/homepage" className="navbar-link">Home</Link>
+        </li>
+        {/* <li className="navbar-item">
           <Link to="/signin" className="navbar-link">Sign In</Link>
         </li>
         <li className="navbar-item">
@@ -43,8 +47,8 @@ const Navbar = () => {
         </li>
         <li className="navbar-item">
           <Link to="/reviews" className="navbar-link">Reviews</Link>
-        </li>
-      </ul>
+        </li> */}
+      </ul> 
     </nav>
   );
 };
