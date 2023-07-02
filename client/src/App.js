@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import Body from './components/Body';
 import Signup from './components/SignUp';
 import './App.css';
+import Signin from './components/SignIn';
+import Services from './components/OurServices';
 
 
 
@@ -50,8 +52,11 @@ function App() {
           <HomePage />
         {/* </header> */}
         <Routes>
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/homepage' element={<Body />} />
+        <Route path='/homepage' element={<Body />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/signin' element={<Signin />} />
+        <Route path='/services' element={<Services />} />
+          
         </Routes>
       
         <Footer />

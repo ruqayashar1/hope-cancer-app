@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <div className='about'>
+      <div className='footer'>
         
     <section> <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-facebook fa-4x"></i>
@@ -16,9 +16,7 @@ const Footer = () => {
 
         <h3>Company Info</h3>
         <p>
-          Epic Adventures provides an online ticket booking system
-          that simplifies the customer needs. Customers can book bus tickets
-          and pay online, saving a lot of time. We have transformed bus travel in the country by bringing ease and convenience to millions of Kenyans who travel using buses.
+        At  Hope Cancer App, we are committed to improving the lives of cancer patients and their families by harnessing the potential of digital health solutions. We strive to make cancer care more accessible, personalized, and empowering, ultimately contributing to better outcomes and quality of life for individuals affected by cancer.
         </p>
         
       
@@ -26,7 +24,7 @@ const Footer = () => {
      
        <h3>Get In Touch</h3>
         <p>
-          Located along Prism Towers, 6th Floor, Prism Towers, Third Ngong Avenue, Upperhill, Nairobi, Kenya.
+          Located along Afya Center, 6th Floor, Third Ngong Avenue, Upperhill, Nairobi, Kenya.
         </p>
         
        <h3>Contact Us</h3>
@@ -34,7 +32,7 @@ const Footer = () => {
           Telephone: +254723000456
         </p>
         <p>
-          Email: info@epictransit.com
+          Email: info@hopecancerapp.com
         </p>
        
      
