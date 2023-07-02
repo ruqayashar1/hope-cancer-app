@@ -16,7 +16,12 @@ const Footer = () => {
 
         <h3>Company Info</h3>
         <p>
-        At  Hope Cancer App, we are committed to improving the lives of cancer patients and their families by harnessing the potential of digital health solutions. We strive to make cancer care more accessible, personalized, and empowering, ultimately contributing to better outcomes and quality of life for individuals affected by cancer.
+        At  Hope Cancer App, we are committed to improving 
+        the lives of cancer patients and their families 
+        by harnessing the potential of digital health solutions.
+        We strive to make cancer care more accessible, personalized
+        and empowering, ultimately contributing to better outcomes
+        and quality of life for individuals affected by cancer.
         </p>
         
       
