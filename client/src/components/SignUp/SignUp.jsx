@@ -95,3 +95,14 @@
 // }
 
 // export default Register;
+
+import React from 'react';
+import './SignUp.css';
+
+function SignUp() {
+    return(
+        <h1>SignUp to continue</h1>
+    );
+}
+
+export default SignUp;

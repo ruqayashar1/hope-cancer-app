@@ -27,6 +27,7 @@
 // export default Navbar;
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
@@ -41,7 +42,7 @@ const Navbar = () => {
         </li>
         
         <li className={"navbar-item" }>
-          <Link to="/signin" className="navbar-link">Sign In</Link>
+          <Link to="/login" className="navbar-link">Login</Link>
         </li>
         <li className={"navbar-item" }>
           <Link to="/services" className="navbar-link">Our Services</Link>
