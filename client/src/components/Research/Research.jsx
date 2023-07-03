@@ -2,11 +2,6 @@ import React from "react";
 import "./Research.css";
 
 function Research() {
-  const procedure = [
-    {},
-    {},
-    {}
-  ];
 
   return (
     <div className="research">

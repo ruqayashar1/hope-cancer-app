@@ -1,13 +1,13 @@
 import React from 'react';
 import { Routes, Route} from 'react-router-dom';
-import HomePage from './components/HomePage';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Body from './components/Body';
-import Signup from './components/SignUp';
+import HomePage from './components/HomePage/HomePage';
+import Navbar from './components/NavBar/Navbar';
+import Footer from './components/Footer/Footer';
+import Body from './components/Body/Body';
+import Signup from './components/SignUp/SignUp';
 import './App.css';
-import Signin from './components/SignIn';
-import Services from './components/OurServices';
+import Login from './components/Login/Login';
+import Services from './components/OurServices/OurServices';
 import Research from './components/Research/Research';
 
 
@@ -55,7 +55,7 @@ function App() {
         <Routes>
           <Route path='/homepage' element={<Body />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/signin' element={<Signin />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/services' element={<Services />} />
           <Route path='/research' element={<Research />} />
           
