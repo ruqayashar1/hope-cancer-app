@@ -1,0 +1,115 @@
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.user-profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #eee;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 10px;
+  position: relative;
+}
+
+.has-photo .placeholder {
+  display: none;
+}
+
+.delete-photo {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.display-value {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+.appointment-section {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-update,
+.btn-cancel,
+.btn-edit {
+  margin-right: 10px;
+}
+
+.btn-make-appointment {
+  background-color: #28a745;
+}
+
+.appointment-details {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.appointment-details h3 {
+  margin-top: 0;
+}
+
+.btn-save,
+.btn-delete {
+  margin-right: 10px;
+  background-color: #dc3545;
+}
+
+.btn-delete {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.btn-delete:hover {
+  background-color: #f1f3f5;
+}
