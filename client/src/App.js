@@ -10,36 +10,7 @@ import Login from "./components/Login/Login";
 import Services from "./components/OurServices/OurServices";
 import Research from "./components/Research/Research";
 import UserProfile from "./components/UserProfile/UserProfile";
-
-// function App() {
-//   // const [signUpData, setSignUpData] = useState([]);
-//   // const [trainData, setTrainData] = useState([]);
-//   return (
-//     <>
-//      <Navbar />
-//       <header className="App-header">
-
-//         <p>
-//           WELCOME HOME
-//         </p>
-
-//      <HomePage />
-//      {/* <Routes>
-//      {/* <Route path='/' element={<Signup signUpData={signUpData}/>}/> */}
-//           {/* <Route path="/signin" element={< signinform data={trainData} />} />
-
-//      </Routes> */}
-//       </header>
-//       <Routes>
-//       <Route path='/signup' element={<Signup />}/>
-//       </Routes>
-//       <Body />
-//       <Footer />
-//     </>
-//   );
-// }
-
-// export default App;
+import AdminLogin from "./components/AdminLogin/AdminLogin";
 
 function App() {
   return (
@@ -56,6 +27,7 @@ function App() {
         <Route path="/user_profile" element={<UserProfile />} />
         <Route path="/research" element={<Research />} />
         <Route path="/UserProfile" element={<UserProfile />} />
+        <Route path="/admin" element={<AdminLogin />} />
       </Routes>
 
       <Footer />

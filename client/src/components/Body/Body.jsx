@@ -3,7 +3,7 @@ import React from "react";
 function Body() {
   return (
     <div id="container-fluid h-100">
-      <div style={{minHeight: '190px'}}></div>
+      <div style={{ minHeight: "190px" }}></div>
       <div className="row m-0">
         <div className="col-md-6 col-12 mx-auto">
           <div className="vstack gap-4 h-100 w-100 justify-content-center align-items-center">
@@ -26,7 +26,7 @@ function Body() {
           </div>
         </div>
       </div>
-      <div style={{minHeight: '200px'}}></div>
+      <div style={{ minHeight: "200px" }}></div>
     </div>
   );
 }

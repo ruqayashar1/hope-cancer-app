@@ -1,0 +1,110 @@
+.auth-form-container {
+  max-width: 50px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.auth-form-container h2 {
+  text-align: center;
+}
+
+.auth-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-form-container label {
+  font-weight: bold;
+}
+
+.auth-form-container input[type="email"],
+.auth-form-container input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.auth-form-container button[type="submit"],
+.auth-form-container button.link-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.auth-form-container button.link-btn {
+  background-color: transparent;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  max-width: 90%;
+}
+
+.body img {
+  margin-right: 10px;
+  max-height: 100%; /* Limit the height of the image to fit the available space */
+  object-fit: contain; /* Adjust the object-fit property as desired */
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: -9px;
+  margin-left: -8px;
+  margin-right: -8px;
+  padding: 10px;
+  background-color: darkcyan;
+}
+
+.footer > * {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #161313;
+  margin-right: 10px;
+  font-size: 59px;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+.account {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
+  border: 5px solid whitesmoke;
+}
+
+.image {
+  flex: 1;
+  height: 100%; /* Set the height of the image container to 100% of the parent container */
+  width: 50%;
+  flex-grow: 45;
+  object-fit: contain;
+  background-color: rgba(6, 46, 178, 0.987);
+}
