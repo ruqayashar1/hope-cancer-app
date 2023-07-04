@@ -9,6 +9,7 @@ import './App.css';
 import Signin from './components/SignIn';
 import Services from './components/OurServices';
 import Research from './components/Research';
+import AdminLogin from './components/AdminLogin';
 
 
 
@@ -58,6 +59,7 @@ function App() {
         <Route path='/signin' element={<Signin />} />
         <Route path='/services' element={<Services />} />
         <Route path='/research' element={<Research />} />
+        {/* <Route path='/adminlogin' element={<AdminLogin/>} /> */}
           
         </Routes>
       

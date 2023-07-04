@@ -49,6 +49,9 @@ const Navbar = () => {
         <li className={"navbar-item" }>
           <Link to="/research" className="navbar-link">Educational Research</Link>
         </li>
+        {/* <li className={"navbar-item" }>
+          <Link to="/adminlogin" className="navbar-link">Admin Login</Link>
+        </li> */}
         {/* <li className="navbar-item">
           <Link to="/signin" className="navbar-link">Sign In</Link>
         </li>
