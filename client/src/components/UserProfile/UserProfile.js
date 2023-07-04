@@ -14,6 +14,10 @@ const UserProfile = () => {
   const [selectedCancer, setSelectedCancer] = useState('');
   const [appointment, setAppointment] = useState(null);
   const [isEditingAppointment, setIsEditingAppointment] = useState(false);
+  const [isAppointmentFormVisible, setIsAppointmentFormVisible] = useState(false);
+  const [appointmentDate, setAppointmentDate] = useState('');
+  const [appointmentTime, setAppointmentTime] = useState('');
+  const [hospitalBranch, setHospitalBranch] = useState('');
 
   const handlePhotoChange = (event) => {
     setPhoto(URL.createObjectURL(event.target.files[0]));
@@ -35,24 +39,17 @@ const UserProfile = () => {
 
   const handleCancelEdit = () => {
     setIsEditing(false);
-    // Reset the form values to original state
+    // Reset the form values to the original state
     setName('John Doe');
     setUserID('12345');
-    setHistory(
-      'Previous Visits:\n1. Jan 2023 - Checkup\n2. Mar 2023 - Treatment'
-    );
+    setHistory('Previous Visits:\n1. Jan 2023 - Checkup\n2. Mar 2023 - Treatment');
     setSelectedDoctor('');
     setConditionSeverity(5);
     setSelectedCancer('');
   };
 
   const handleMakeAppointment = () => {
-    const newAppointment = {
-      cancerType: selectedCancer,
-      doctor: selectedDoctor,
-      conditionSeverity,
-    };
-    setAppointment(newAppointment);
+    setIsAppointmentFormVisible(true);
   };
 
   const handleEditAppointment = () => {
@@ -60,7 +57,17 @@ const UserProfile = () => {
   };
 
   const handleSaveAppointment = () => {
+    const newAppointment = {
+      cancerType: selectedCancer,
+      doctor: selectedDoctor,
+      conditionSeverity,
+      date: appointmentDate,
+      time: appointmentTime,
+      branch: hospitalBranch,
+    };
+    setAppointment(newAppointment);
     setIsEditingAppointment(false);
+    setIsAppointmentFormVisible(false);
   };
 
   const handleDeleteAppointment = () => {
@@ -68,7 +75,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container my-3">
       <div className="user-profile">
         <div
           className={`image ${photo ? 'has-photo' : ''}`}
@@ -79,7 +86,7 @@ const UserProfile = () => {
         >
           {!photo && <span className="placeholder">Add profile photo</span>}
           {photo && (
-            <button className="delete-photo" onClick={handleDeletePhoto}>
+            <button  className="btn btn-primary" style={{width: 'fit-content'}} onClick={handleDeletePhoto}>
               Delete Photo
             </button>
           )}
@@ -97,12 +104,7 @@ const UserProfile = () => {
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           {isEditing ? (
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
           ) : (
             <div className="display-value">{name}</div>
           )}
@@ -125,11 +127,7 @@ const UserProfile = () => {
         <div className="form-group">
           <label htmlFor="history">History:</label>
           {isEditing ? (
-            <textarea
-              id="history"
-              value={history}
-              onChange={(e) => setHistory(e.target.value)}
-            ></textarea>
+            <textarea id="history" value={history} onChange={(e) => setHistory(e.target.value)}></textarea>
           ) : (
             <div className="display-value">{history}</div>
           )}
@@ -137,132 +135,134 @@ const UserProfile = () => {
 
         {isEditing ? (
           <>
-            <button type="submit" className="btn btn-update">
+            <button type="submit"  style={{width: 'fit-content'}} className="btn btn-primary">
               Save Profile
             </button>
-            <button
-              type="button"
-              className="btn btn-cancel"
-              onClick={handleCancelEdit}
-            >
+            <button type="button"  style={{width: 'fit-content'}} className="btn btn-danger" onClick={handleCancelEdit}>
               Cancel
             </button>
           </>
         ) : (
-          <button
-            type="button"
-            className="btn btn-edit"
-            onClick={handleEditProfile}
-          >
+          <button type="button"  style={{width: 'fit-content'}} className="btn btn-secondary" onClick={handleEditProfile}>
             Edit Profile
           </button>
         )}
       </form>
 
       <div className="appointment-section">
-        <h3>Make an Appointment</h3>
-        <div className="form-group">
-          <label htmlFor="cancer">Cancer Type:</label>
-          <select
-            id="cancer"
-            value={selectedCancer}
-            onChange={(e) => setSelectedCancer(e.target.value)}
-          >
-            <option value="">Select Cancer Type</option>
-            <option value="Breast Cancer">Breast Cancer</option>
-            <option value="Lung Cancer">Lung Cancer</option>
-            <option value="Prostate Cancer">Prostate Cancer</option>
-          </select>
+        <div className="appointment-buttons">
+          <button  className="btn btn-primary" onClick={handleMakeAppointment}>
+            Make Appointment
+          </button>
+          {appointment && !isEditingAppointment && (
+            <div>
+              <button  className="btn btn-primary" onClick={handleEditAppointment}>
+                Edit Appointment
+              </button>
+              <button  className="btn btn-dele btn btn-primaryte" onClick={handleDeleteAppointment}>
+                Delete Appointment
+              </button>
+            </div>
+          )}
         </div>
 
-        <div className="form-group">
-          <label htmlFor="doctor">Doctor:</label>
-          <select
-            id="doctor"
-            value={selectedDoctor}
-            onChange={(e) => setSelectedDoctor(e.target.value)}
-          >
-            <option value="">Select Doctor</option>
-            {selectedCancer === 'Breast Cancer' && (
-              <>
-                <option value="Dr. Smith">Dr. Smith</option>
-                <option value="Dr. Johnson">Dr. Johnson</option>
-              </>
-            )}
-            {selectedCancer === 'Lung Cancer' && (
-              <>
-                <option value="Dr. Williams">Dr. Williams</option>
-                <option value="Dr. Davis">Dr. Davis</option>
-              </>
-            )}
-            {selectedCancer === 'Prostate Cancer' && (
-              <>
-                <option value="Dr. Anderson">Dr. Anderson</option>
-                <option value="Dr. Brown">Dr. Brown</option>
-              </>
-            )}
-          </select>
-        </div>
+        {isAppointmentFormVisible && (
+          <div className="make-appointment-form">
+            <div className="form-group">
+              <label htmlFor="cancer">Cancer Type:</label>
+              <select id="cancer" value={selectedCancer} onChange={(e) => setSelectedCancer(e.target.value)}>
+                <option value="">Select Cancer Type</option>
+                <option value="Breast Cancer">Breast Cancer</option>
+                <option value="Lung Cancer">Lung Cancer</option>
+                <option value="Prostate Cancer">Prostate Cancer</option>
+              </select>
+            </div>
 
-        <div className="form-group">
-          <label htmlFor="condition-severity">Condition Severity:</label>
-          <select
-            id="condition-severity"
-            value={conditionSeverity}
-            onChange={(e) => setConditionSeverity(Number(e.target.value))}
-          >
-            <option value="0">0 - Worst</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10 - Healthiest</option>
-          </select>
-        </div>
+            <div className="form-group">
+              <label htmlFor="doctor">Doctor:</label>
+              <select id="doctor" value={selectedDoctor} onChange={(e) => setSelectedDoctor(e.target.value)}>
+                <option value="">Select Doctor</option>
+                {selectedCancer === 'Breast Cancer' && (
+                  <>
+                    <option value="Dr. Smith">Dr. Smith</option>
+                    <option value="Dr. Johnson">Dr. Johnson</option>
+                  </>
+                )}
+                {selectedCancer === 'Lung Cancer' && (
+                  <>
+                    <option value="Dr. Williams">Dr. Williams</option>
+                    <option value="Dr. Davis">Dr. Davis</option>
+                  </>
+                )}
+                {selectedCancer === 'Prostate Cancer' && (
+                  <>
+                    <option value="Dr. Anderson">Dr. Anderson</option>
+                    <option value="Dr. Brown">Dr. Brown</option>
+                  </>
+                )}
+              </select>
+            </div>
 
-        <button
-          className="btn btn-make-appointment"
-          onClick={handleMakeAppointment}
-        >
-          Make Appointment
-        </button>
+            <div className="form-group">
+              <label htmlFor="condition-severity">Condition Severity:</label>
+              <select
+                id="condition-severity"
+                value={conditionSeverity}
+                onChange={(e) => setConditionSeverity(parseInt(e.target.value))}
+              >
+                <option value="1">1 (Mild)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Severe)</option>
+              </select>
+            </div>
 
-        {appointment && (
+            <div className="form-group">
+              <label htmlFor="appointment-date">Date:</label>
+              <input
+                type="date"
+                id="appointment-date"
+                value={appointmentDate}
+                onChange={(e) => setAppointmentDate(e.target.value)}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="appointment-time">Time:</label>
+              <input
+                type="time"
+                id="appointment-time"
+                value={appointmentTime}
+                onChange={(e) => setAppointmentTime(e.target.value)}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="hospital-branch">Hospital Branch:</label>
+              <input
+                type="text"
+                id="hospital-branch"
+                value={hospitalBranch}
+                onChange={(e) => setHospitalBranch(e.target.value)}
+              />
+            </div>
+
+            <button  className="btn btn-primary" onClick={handleSaveAppointment}>
+              Save Appointment
+            </button>
+          </div>
+        )}
+
+        {appointment && !isEditingAppointment && (
           <div className="appointment-details">
-            <h3>Appointment Details</h3>
-            <div>
-              <strong>Cancer Type:</strong> {appointment.cancerType}
-            </div>
-            <div>
-              <strong>Doctor:</strong> {appointment.doctor}
-            </div>
-            <div>
-              <strong>Condition Severity:</strong> {appointment.conditionSeverity}
-            </div>
-            {!isEditingAppointment ? (
-              <div>
-                <button className="btn btn-edit" onClick={handleEditAppointment}>
-                  Edit Appointment
-                </button>
-                <button className="btn btn-delete" onClick={handleDeleteAppointment}>
-                  Delete Appointment
-                </button>
-              </div>
-            ) : (
-              <div>
-                <button className="btn btn-save" onClick={handleSaveAppointment}>
-                  Save Appointment
-                </button>
-                <button className="btn btn-cancel" onClick={() => setIsEditingAppointment(false)}>
-                  Cancel
-                </button>
-              </div>
-            )}
+            <h3>Appointment Details:</h3>
+            <p>Cancer Type: {appointment.cancerType}</p>
+            <p>Doctor: {appointment.doctor}</p>
+            <p>Condition Severity: {appointment.conditionSeverity}</p>
+            <p>Date: {appointment.date}</p>
+            <p>Time: {appointment.time}</p>
+            <p>Hospital Branch: {appointment.branch}</p>
           </div>
         )}
       </div>
