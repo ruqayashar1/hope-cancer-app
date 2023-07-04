@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className='text-white'>
         <div id='footer'>
           
           {/* <section> 

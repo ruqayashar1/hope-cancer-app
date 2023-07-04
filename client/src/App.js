@@ -1,36 +1,34 @@
-import React from 'react';
-import { Routes, Route} from 'react-router-dom';
-import HomePage from './components/HomePage/HomePage';
-import Navbar from './components/NavBar/Navbar';
-import Footer from './components/Footer/Footer';
-import Body from './components/Body/Body';
-import Signup from './components/SignUp/SignUp';
-import './App.css';
-import Login from './components/Login/Login';
-import Services from './components/OurServices/OurServices';
-import Research from './components/Research/Research';
-
-
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./components/HomePage/HomePage";
+import Navbar from "./components/NavBar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Body from "./components/Body/Body";
+import Signup from "./components/SignUp/SignUp";
+import "./App.css";
+import Login from "./components/Login/Login";
+import Services from "./components/OurServices/OurServices";
+import Research from "./components/Research/Research";
+import UserProfile from "./components/UserProfile/UserProfile";
 
 // function App() {
 //   // const [signUpData, setSignUpData] = useState([]);
 //   // const [trainData, setTrainData] = useState([]);
 //   return (
 //     <>
-//      <Navbar />  
+//      <Navbar />
 //       <header className="App-header">
-        
+
 //         <p>
 //           WELCOME HOME
 //         </p>
-     
+
 //      <HomePage />
 //      {/* <Routes>
 //      {/* <Route path='/' element={<Signup signUpData={signUpData}/>}/> */}
 //           {/* <Route path="/signin" element={< signinform data={trainData} />} />
 
-//      </Routes> */} 
+//      </Routes> */}
 //       </header>
 //       <Routes>
 //       <Route path='/signup' element={<Signup />}/>
@@ -45,25 +43,23 @@ import Research from './components/Research/Research';
 
 function App() {
   return (
-    
-      <>
-        <Navbar />
-        {/* <header className="App-header">
+    <div className="h-100">
+      <Navbar />
+      {/* <header className="App-header">
           <p>WELCOME HOME</p> */}
-          {/* <HomePage /> */}
-        {/* </header> */}
-        <Routes>
-          <Route path='/homepage' element={<Body />} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/services' element={<Services />} />
-          <Route path='/research' element={<Research />} />
-          
-        </Routes>
-      
-        <Footer />
-      </>
-    
+      {/* <HomePage /> */}
+      {/* </header> */}
+      <Routes>
+        <Route path="/homepage" element={<Body />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/user_profile" element={<UserProfile />} />
+        <Route path="/research" element={<Research />} />
+        <Route path="/UserProfile" element={<UserProfile />} />
+      </Routes>
+
+      <Footer />
+    </div>
   );
 }
 export default App;

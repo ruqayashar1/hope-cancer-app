@@ -31,9 +31,9 @@ import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav >
         
-        <ul className="navbar-list">
+        <ul className="navbar-list py-4">
         <li className={"navbar-item" }>
           <Link to="/homepage" className="navbar-link">Home</Link>
         </li>
@@ -45,7 +45,7 @@ const Navbar = () => {
           <Link to="/login" className="navbar-link">Login</Link>
         </li>
         <li className={"navbar-item" }>
-          <Link to="/services" className="navbar-link">Our Services</Link>
+          <Link to="/user_profile" className="navbar-link">User Profile</Link>
         </li>
         <li className={"navbar-item" }>
           <Link to="/research" className="navbar-link">Educational Research</Link>

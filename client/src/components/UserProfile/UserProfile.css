@@ -1,5 +1,5 @@
 .container {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -64,8 +64,11 @@ label {
   line-height: 1.4;
 }
 
-.appointment-section {
-  margin-top: 20px;
+.appointment-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 15px;
 }
 
 .btn {
@@ -75,6 +78,7 @@ label {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .btn-update,
@@ -85,6 +89,10 @@ label {
 
 .btn-make-appointment {
   background-color: #28a745;
+}
+
+.edit-appointment-form {
+  margin-top: 20px;
 }
 
 .appointment-details {

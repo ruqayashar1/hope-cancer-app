@@ -13,7 +13,7 @@ function Research() {
           <h2>Cancer Screening</h2>
           <p>We focus on ergonomics and meeting you where you work. It's only a keystroke away.</p>
           <p><b>Free</b></p>
-          <p><img src="blob:https://www.figma.com/001254f2-84f4-447d-9fb6-59d32ca81026" alt="clock" />1hr 30min</p>
+          {/* <p><img src="blob:https://www.figma.com/001254f2-84f4-447d-9fb6-59d32ca81026" alt="clock" />1hr 30min</p> */}
           <button id="btn">Learn More</button>
         </div>
         <div className="card">
@@ -22,7 +22,7 @@ function Research() {
           <h2>Cancer Treatment Options</h2>
           <p>We focus on ergonomics and meeting you where you work. It's only a keystroke away.</p>
           <p><b>Free</b></p>
-          <p><img src="blob:https://www.figma.com/001254f2-84f4-447d-9fb6-59d32ca81026" alt="clock" />1hr</p>
+          {/* <p><img src="blob:https://www.figma.com/001254f2-84f4-447d-9fb6-59d32ca81026" alt="clock" />1hr</p> */}
           <button id="btn">Learn More</button>
         </div>
         <div className="card"> 
@@ -31,7 +31,7 @@ function Research() {
           <h2>Cancer Types</h2>
           <p>We focus on ergonomics and meeting you where you work. It's only a keystroke away.</p>
           <p><b>Free</b></p>
-          <p><img src="blob:https://www.figma.com/001254f2-84f4-447d-9fb6-59d32ca81026" alt="clock" />30min</p>
+          {/* <p><img src="blob:https://www.figma.com/001254f2-84f4-447d-9fb6-59d32ca81026" alt="clock" />30min</p> */}
           <button id="btn">Learn More</button>
         </div>
       </div>
