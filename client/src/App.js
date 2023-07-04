@@ -1,15 +1,15 @@
 import React from 'react';
 import { Routes, Route} from 'react-router-dom';
-import HomePage from './components/HomePage';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Body from './components/Body';
-import Register from './components/SignUp';
+import HomePage from './components/HomePage/HomePage';
+import Navbar from './components/NavBar/Navbar';
+import Footer from './components/Footer/Footer';
+import Body from './components/Body/Body';
+import Signup, { SignUp } from './components/SignUp/SignUp';
 import './App.css';
-import Signin from './components/SignIn';
-import Services from './components/OurServices';
-import Research from './components/Research';
-import AdminLogin from './components/AdminLogin';
+import Login from './components/Login/Login';
+import Services from './components/OurServices/OurServices';
+import Research from './components/Research/Research';
+import AdminLogin from './components/AdminLogin/AdminLogin';
 
 
 
@@ -51,15 +51,15 @@ function App() {
         <Navbar />
         {/* <header className="App-header">
           <p>WELCOME HOME</p> */}
-          <HomePage />
+          {/* <HomePage /> */}
         {/* </header> */}
         <Routes>
         <Route path='/homepage' element={<Body />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/signin' element={<Signin />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/services' element={<Services />} />
         <Route path='/research' element={<Research />} />
-        {/* <Route path='/adminlogin' element={<AdminLogin/>} /> */}
+        <Route path='/adminlogin' element={<AdminLogin/>} />
           
         </Routes>
       
