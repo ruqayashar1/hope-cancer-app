@@ -9,11 +9,23 @@ function Body() {
           <div className="vstack gap-4 h-100 w-100 justify-content-center align-items-center">
             <h1 className="fw-bold">Hope cancer management</h1>
             <p>
-              We are always fully focused on helping you through your cancer
-              journey
+            Empowering You in Your Cancer Journey
             </p>
+            <p>Your Comprehensive Companion for Cancer Management</p>
+            <p>VALUE PROPOSITION</p>
+<p>Personalized Treatment Plans: Tailored to your unique needs
+Symptom Tracking: Monitor your progress and well-being
+Expert Guidance: Access to trusted medical professionals
+Community Support: Connect with others on a similar journey
+Educational Resources: Stay informed and empowered</p>
+
+<p>Support and Contact Information:
+
+"Have questions or need assistance? Contact our friendly support team at cancermanagementteamKe@gmail.com"</p>
+
+
             <button style={{ backgroundColor: "orange" }} className="btn p-3">
-              Learn More
+              WELCOME >> SERVICE AT HAND
             </button>
           </div>
         </div>
@@ -26,7 +38,7 @@ function Body() {
           </div>
         </div>
       </div>
-      <div style={{ minHeight: "200px" }}></div>
+      <div style={{ minHeight: "700px" }}></div>
     </div>
   );
 }

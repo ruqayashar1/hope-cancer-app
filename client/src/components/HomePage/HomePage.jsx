@@ -6,6 +6,7 @@ function HomePage() {
         <div className="homePage">
             <p>HOPE CANCER APP</p>
             <p>WE CARE FOR YOUR UNIQUE NEEDS </p>
+            <p></p>
         </div>
     );
 }
