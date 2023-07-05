@@ -7,7 +7,7 @@ function Body() {
       <div className="row m-0">
         <div className="col-md-6 col-12 mx-auto">
           <div className="vstack gap-4 h-100 w-100 justify-content-center align-items-center">
-            <h1 className="fw-bold">Hope cancer management</h1>
+            <h1 className="fw-bold">HOPE CANCER MANAGEMENT APP</h1>
             <p>
             Empowering You in Your Cancer Journey
             </p>
