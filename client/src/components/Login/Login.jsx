@@ -106,7 +106,7 @@ const Login = (props) => {
         </div>
         <div className="col-md-6 col-12 mx-auto">
           <img
-            src="https://s3-alpha-sig.figma.com/img/bac9/5e30/ff11c33a71cf747ed1eb59d63164befd?Expires=1689552000&Signature=Bj0fyaoJeC93axp7qMv~TZ6dBErsSSnQrlyj3i2mUqEAqPcIejZQhE0M4cCSxY-6LSedN72IlzrCqrP0jKZZg0AxWa58XUoAr-wCPvkuQP5liNw~Hh3p9kvZFo1nVGA6i5Zw6II1KqgryvkG57p5HC~wQ~L79rfjGplJvOiYOKimpax-CMxum0O00Itv~Ee7BDXq6ZwO5~nZ-H~GD0TH5Z--ug9h9lUDWuSe8YGarsUOMR4Lg4OZatY0S5QgnXD-l65r5xyuley81-URU1w1nfMRzpAFG3OOjRz0H9GDqYvzeouVJS2Aod92VJc2HLDBSKmHaPIC-cKVVuq9gGagVQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+            src="https://images.unsplash.com/photo-1576089172869-4f5f6f315620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FuY2VyJTIwcGF0aWVudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
             alt="Login Image"
           />
         </div>
