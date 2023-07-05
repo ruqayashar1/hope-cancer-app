@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage";
 import Navbar from "./components/NavBar/Navbar";
@@ -13,9 +13,10 @@ import UserProfile from "./components/UserProfile/UserProfile";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
 
 function App() {
+  const [isLoggedin, setLoggedin] = useState(false);
   return (
     <div className="h-100">
-      <Navbar />
+      <Navbar isLoggedin={isLoggedin} setLoggedin={setLoggedin}/>
       {/* <header className="App-header">
           <p>WELCOME HOME</p> */}
       {/* <HomePage /> */}
@@ -23,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/homepage" element={<Body />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setLoggedin={setLoggedin}/>} />
         <Route path="/user_profile" element={<UserProfile />} />
         <Route path="/research" element={<Research />} />
         <Route path="/UserProfile" element={<UserProfile />} />

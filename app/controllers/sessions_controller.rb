@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
+
+    def index
+        patients = Patient.all
+        render json: patients, status: :ok
+    end
+
     def create
-        puts 'hello'
-        patient = PatientSignup.find_by(email: params[:email])
-        puts params
-        puts patient
-        puts patient[:email]
-        puts patient[:password]
+        patient = Patient.find_by(email: params[:email])
         if patient&.authenticate(params[:password])
           #session[:patient_id] = patient.id
           render json: patient, status: :created
@@ -13,8 +14,4 @@ class SessionsController < ApplicationController
           render json: { error: "Invalid email or password" }, status: :unauthorized
         end
     end
-    # def destroy
-    #     session[:user_id] = nil
-    #     head :no_content
-    # end
 end

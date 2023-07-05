@@ -1,6 +1,6 @@
-class PatientSignupsController < ApplicationController
+class PatientsController < ApplicationController
     def create
-        patient = PatientSignup.create(signup_params)
+        patient = Patient.create(signup_params)
         if patient.valid?
           #session[:user_id] = user.id
           render json: patient, status: :created
@@ -12,6 +12,6 @@ class PatientSignupsController < ApplicationController
     private
 
     def signup_params
-        params.permit(:user_name, :password, :email)
+        params.permit(:name, :password, :email)
     end
 end

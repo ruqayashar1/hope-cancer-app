@@ -170,7 +170,7 @@ const UserProfile = () => {
           <div className="make-appointment-form">
             <div className="form-group">
               <label htmlFor="cancer">Cancer Type:</label>
-              <select id="cancer" value={selectedCancer} onChange={(e) => setSelectedCancer(e.target.value)}>
+              <select id="cancer" value={selectedCancer} onChange={(e) => setSelectedCancer(e.target.value)} required>
                 <option value="">Select Cancer Type</option>
                 <option value="Breast Cancer">Breast Cancer</option>
                 <option value="Lung Cancer">Lung Cancer</option>
@@ -180,24 +180,23 @@ const UserProfile = () => {
 
             <div className="form-group">
               <label htmlFor="doctor">Doctor:</label>
-              <select id="doctor" value={selectedDoctor} onChange={(e) => setSelectedDoctor(e.target.value)}>
+              <select id="doctor" value={selectedDoctor} onChange={(e) => setSelectedDoctor(e.target.value)} required>
                 <option value="">Select Doctor</option>
                 {selectedCancer === 'Breast Cancer' && (
                   <>
-                    <option value="Dr. Smith">Dr. Smith</option>
-                    <option value="Dr. Johnson">Dr. Johnson</option>
+                    <option value="Dr. Rukia">Dr. Rukia</option>
+                    <option value="Dr. Japheth">Dr. Japheth</option>
                   </>
                 )}
                 {selectedCancer === 'Lung Cancer' && (
                   <>
-                    <option value="Dr. Williams">Dr. Williams</option>
-                    <option value="Dr. Davis">Dr. Davis</option>
+                     <option value="Dr. Mercy">Dr. Mercy</option>
+                    <option value="Dr. Nyakundi">Dr. Nyakundi</option>
                   </>
                 )}
                 {selectedCancer === 'Prostate Cancer' && (
                   <>
-                    <option value="Dr. Anderson">Dr. Anderson</option>
-                    <option value="Dr. Brown">Dr. Brown</option>
+                    <option value="Dr. Charles">Dr. Charles</option>
                   </>
                 )}
               </select>
@@ -209,6 +208,7 @@ const UserProfile = () => {
                 id="condition-severity"
                 value={conditionSeverity}
                 onChange={(e) => setConditionSeverity(parseInt(e.target.value))}
+                required
               >
                 <option value="1">1 (Mild)</option>
                 <option value="2">2</option>
@@ -225,6 +225,7 @@ const UserProfile = () => {
                 id="appointment-date"
                 value={appointmentDate}
                 onChange={(e) => setAppointmentDate(e.target.value)}
+                required
               />
             </div>
 
@@ -235,6 +236,7 @@ const UserProfile = () => {
                 id="appointment-time"
                 value={appointmentTime}
                 onChange={(e) => setAppointmentTime(e.target.value)}
+                required
               />
             </div>
 
@@ -245,6 +247,7 @@ const UserProfile = () => {
                 id="hospital-branch"
                 value={hospitalBranch}
                 onChange={(e) => setHospitalBranch(e.target.value)}
+                required
               />
             </div>
 

@@ -8,7 +8,7 @@ export const SignUp = (props) => {
 
   const [password, setPass] = useState("");
 
-  const [user_name, setName] = useState("");
+  const [name, setName] = useState("");
 
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ export const SignUp = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user_name,
+        name,
         password,
         email,
       }),
@@ -52,7 +52,7 @@ export const SignUp = (props) => {
             <label htmlFor="name">Username</label>
 
             <input
-              value={user_name}
+              value={name}
               name="name"
               onChange={(e) => setName(e.target.value)}
               id="name"

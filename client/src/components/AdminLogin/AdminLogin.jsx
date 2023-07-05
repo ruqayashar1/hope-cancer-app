@@ -1,18 +1,34 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./AdminLogin.css";
 
 export const AdminLogin = (props) => {
-  const [email, setUsername] = useState("");
-  const [pass, setPass] = useState("");
+  const [name, setUsername] = useState("");
+  const [password, setPass] = useState("");
   const [resetPassword, setResetPassword] = useState(false);
   const [resetEmail, setResetUsername] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email);
-    props.onLogin();
-  };
+  const navigate = useNavigate();
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log({name, password})
+    console.log({name, password})
+    fetch("/adminlogin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, password }),
+    }).then((r) => 
+    {
+      console.log(r)
+      if (r.ok) {
+       // r.json().then((user) => setUser(user));
+       navigate('/user_profile');
+      }
+    });
+  }
   const handleResetSubmit = (e) => {
     e.preventDefault();
     console.log(resetEmail);
@@ -53,7 +69,7 @@ export const AdminLogin = (props) => {
               <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="username">Doctor's Username</label>
                 <input
-                  value={email}
+                  value={name}
                   onChange={(e) => setUsername(e.target.value)}
                   type="username"
                   placeholder="username"
@@ -63,7 +79,7 @@ export const AdminLogin = (props) => {
                 />
                 <label htmlFor="password">Password</label>
                 <input
-                  value={pass}
+                  value={password}
                   onChange={(e) => setPass(e.target.value)}
                   type="password"
                   placeholder="********"

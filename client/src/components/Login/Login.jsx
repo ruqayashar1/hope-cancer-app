@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import "./Login.css";
 
-const Login = (props) => {
+const Login = ({setLoggedin}) => {
   const [email, setUsername] = useState(""); // Add this line
 
   const [password, setPass] = useState("");
@@ -24,6 +24,7 @@ const Login = (props) => {
     {
       console.log(r)
       if (r.ok) {
+        setLoggedin(true);
        // r.json().then((user) => setUser(user));
        navigate('/user_profile');
       }
