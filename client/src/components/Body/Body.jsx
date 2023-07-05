@@ -38,7 +38,7 @@ Educational Resources: Stay informed and empowered</p>
           </div>
         </div>
       </div>
-      <div style={{ minHeight: "700px" }}></div>
+      <div style={{ minHeight: "10px" }}></div>
     </div>
   );
 }
