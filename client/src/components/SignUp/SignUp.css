@@ -1,6 +1,6 @@
-auth-form-container {
+.auth-form-container {
 
-  width: 70vw;
+  width: 50vw;
   
   height: 50vh;
   
@@ -18,33 +18,13 @@ auth-form-container {
   
   }
   
-  .signup-image {
   
-  border: 5px solid red;
   
-  flex: none;
   
-  width: 35%;
-  
-  flex-grow: 0;
-  
-  }
-  
-  .register {
-  
-  border: 5px solid red;
-  
-  flex: none;
-  
-  width: 50%;
-  
-  flex-grow: 0;
-  
-  }
   
   h2 {
   
-  margin-bottom: 20px;
+  margin-bottom: 2px;
   
   text-align: center;
   
@@ -62,7 +42,7 @@ auth-form-container {
   
   font-weight: bold;
   
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   
   }
   
@@ -72,9 +52,9 @@ auth-form-container {
   
   margin-bottom: 15px;
   
-  border-radius: 5px;
+  border-radius: 1px;
   
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   
   }
   
@@ -82,7 +62,7 @@ auth-form-container {
   
   background-color: #007bff;
   
-  color: white;
+  color:white;
   
   padding: 10px;
   

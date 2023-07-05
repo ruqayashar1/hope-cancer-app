@@ -125,17 +125,18 @@
       flex-direction: row;
       /* height: 70vh; */
       /* width: 100vw; */
-      border: 5px solid whitesmoke;
+      border: 5px solid red;
   
     }
   
-    .image{
-      flex: 1;
+    .Login image{
+      flex: 0;
       height: 50%;
       width: 50%;
       flex-grow: 45;
       object-fit:cover;
-      background-color: rgba(6, 46, 178, 0.987);
+      background-color:navy blue;
+       
       
   
     }

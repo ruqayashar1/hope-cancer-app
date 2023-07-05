@@ -88,7 +88,7 @@ export const SignUp = (props) => {
           </form>
 
           <button
-            className="link-btn mt-3"
+            className="link-btn mt-2"
             onClick={() => navigate('/login')}
           >
             Already have an account? Login here.
