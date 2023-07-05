@@ -1,18 +1,34 @@
 import React, { useState } from "react";
+import {useNavigate} from 'react-router-dom';
 import "./Login.css";
 
 const Login = (props) => {
   const [email, setUsername] = useState(""); // Add this line
 
-  const [pass, setPass] = useState("");
+  const [password, setPass] = useState("");
   const [resetPassword, setResetPassword] = useState(false);
   const [resetEmail, setResetUsername] = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log(email);
-    props.onLogin();
-  };
+    console.log({email, password})
+    fetch("/loggedin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    }).then((r) => 
+    {
+      console.log(r)
+      if (r.ok) {
+       // r.json().then((user) => setUser(user));
+       navigate('/user_profile');
+      }
+    });
+  }
 
   const handleResetSubmit = (e) => {
     e.preventDefault();
@@ -52,19 +68,19 @@ const Login = (props) => {
               </form>
             ) : (
               <form className="login-form" onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="email">Email</label>
                 <input
                   value={email}
                   onChange={(e) => setUsername(e.target.value)}
-                  type="username"
-                  placeholder="username"
+                  type="email"
+                  placeholder="Enter your email"
                   id="username"
-                  name="username"
+                  name="email"
                   required
                 />
                 <label htmlFor="password">Password</label>
                 <input
-                  value={pass}
+                  value={password}
                   onChange={(e) => setPass(e.target.value)}
                   type="password"
                   placeholder="********"
@@ -81,7 +97,7 @@ const Login = (props) => {
             {!resetPassword && (
               <button
                 className="link-btn"
-                onClick={() => props.onFormSwitch("register")}
+                onClick={() => navigate('/signup')}
               >
                 Don't have an account? Register here.
               </button>

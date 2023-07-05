@@ -1,2 +1,0 @@
-class PatientLoginsController < ApplicationController
-end
