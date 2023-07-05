@@ -28,19 +28,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_091153) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "patient_logins", force: :cascade do |t|
-    t.string "user_"
-    t.string "name"
-    t.string "password"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "patient_signups", force: :cascade do |t|
-    t.string "name"
+    t.string "user_name"
     t.string "email"
-    t.string "password"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

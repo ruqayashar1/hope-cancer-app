@@ -1,21 +1,39 @@
 import React, { useState } from "react";
+import {useNavigate} from 'react-router-dom';
 
 import "./SignUp.css";
 
 export const SignUp = (props) => {
   const [email, setEmail] = useState("");
 
-  const [pass, setPass] = useState("");
+  const [password, setPass] = useState("");
 
-  const [name, setName] = useState("");
+  const [user_name, setName] = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  function handleSubmit(e) {
     e.preventDefault();
+    console.log('clicked!')
+    fetch("/signedup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user_name,
+        password,
+        email,
+      }),
+    }).then((r) => {
+      console.log(r);
+      if (r.ok) {
+        //r.json().then((user) => setUser(user));
+        navigate('/login')
+      }
+    });
+  }
 
-    console.log(email);
-
-    props.onLogin();
-  };
 
   return (
     <div className="container-fluid">
@@ -31,10 +49,10 @@ export const SignUp = (props) => {
           <h2>Register</h2>
 
           <form className="register-form" onSubmit={handleSubmit}>
-            <label htmlFor="name">Full name</label>
+            <label htmlFor="name">Username</label>
 
             <input
-              value={name}
+              value={user_name}
               name="name"
               onChange={(e) => setName(e.target.value)}
               id="name"
@@ -57,7 +75,7 @@ export const SignUp = (props) => {
             <label htmlFor="password">Password</label>
 
             <input
-              value={pass}
+              value={password}
               onChange={(e) => setPass(e.target.value)}
               type="password"
               placeholder="****"
@@ -71,7 +89,7 @@ export const SignUp = (props) => {
 
           <button
             className="link-btn mt-3"
-            onClick={() => props.onFormSwitch("login")}
+            onClick={() => navigate('/login')}
           >
             Already have an account? Login here.
           </button>
