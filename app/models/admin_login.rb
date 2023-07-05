@@ -1,2 +1,0 @@
-class AdminLogin < ApplicationRecord
-end
