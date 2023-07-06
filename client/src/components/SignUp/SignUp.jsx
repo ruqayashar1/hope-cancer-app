@@ -96,7 +96,7 @@ export const SignUp = (props) => {
         </div>
         <div className="col-md-6 col-12 mx-auto">
           <img
-            src="https://s3-alpha-sig.figma.com/img/2015/3761/4cff1b617bbaec910a0b0eb847d98b55?Expires=1689552000&Signature=MtX6Re7zJ5ji2w8zv8Bi8gbJN2Vf3AwCLzThIQt1bLZUV5n4IX98GAj4fkewYynSCD6IwuYA~Pp8LCAiMvTcucoE4uNipBwj5TG0B4FQ6yPvL9XTzxqBXJsoFYW1mNSbOnSDXSXHa3XlG7rHdKX2k89yovLyYABw7oNsaJOArdH3lm23fF70XkMhkw313OfLAUaKORNtGF6bOazpz8Nfo7FGkLyDa0LRjzRcsCkwgjqTpwQ5npqfs8x7bBswuTPiEqvyMg7wQPhAPY92euSyCKOKfgS0Luw~d0ph7jWRxoY8P695SzbJzSEklpSGcAbwf8XOhi5RZC4lGU~8PGRkAg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+            src="sign.jpg"
             alt="patient"
           />
         </div>
