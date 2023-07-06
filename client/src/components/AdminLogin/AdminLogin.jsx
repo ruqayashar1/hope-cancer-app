@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminLogin.css";
 
-export const AdminLogin = (props) => {
+export const AdminLogin = ({setDoctor}) => {
   const [name, setUsername] = useState("");
   const [password, setPass] = useState("");
   const [resetPassword, setResetPassword] = useState(false);
@@ -12,6 +12,7 @@ export const AdminLogin = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setDoctor(name)
     console.log("successful")
     // console.log({name, password})
     fetch("/adminlogin", {

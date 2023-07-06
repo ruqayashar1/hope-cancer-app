@@ -10,34 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_05_194509) do
-  create_table "admin_logins", force: :cascade do |t|
-    t.string "doc_name"
-    t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2023_07_06_091729) do
   create_table "appointments", force: :cascade do |t|
-    t.string "cancer_type"
-    t.string "doc_name"
-    t.string "condition"
-    t.datetime "date"
-    t.string "hospital_branch"
+    t.integer "doctor_id", null: false
+    t.integer "patient_id", null: false
+    t.string "cancer"
+    t.string "severity"
+    t.string "appointment_date"
+    t.string "appointment_time"
+    t.string "hospital"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
+    t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
 
   create_table "doctors", force: :cascade do |t|
     t.string "name"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "patient_signups", force: :cascade do |t|
-    t.string "user_name"
-    t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,11 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_194509) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_profiles", force: :cascade do |t|
-    t.string "user_name"
-    t.string "history"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "appointments", "doctors"
+  add_foreign_key "appointments", "patients"
 end

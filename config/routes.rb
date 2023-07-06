@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   post '/signedup', to: 'patients#create'
   post '/loggedin', to: 'sessions#create'
-  get '/patients', to: 'sessions#index'
+  post '/patients', to: 'doctors#all_appointments'
   post '/adminlogin', to: 'doctors#create'
+  post '/appointment', to: 'appointments#create'
 end
