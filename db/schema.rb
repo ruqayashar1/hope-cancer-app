@@ -11,33 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_07_06_092256) do
-  create_table "admin_logins", force: :cascade do |t|
-    t.string "doc_name"
-    t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "appointments", force: :cascade do |t|
-    t.string "cancer_type"
-    t.string "doc_name"
-    t.string "condition"
-    t.datetime "date"
-    t.string "hospital_branch"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "doctors", force: :cascade do |t|
     t.string "name"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "patient_signups", force: :cascade do |t|
-    t.string "user_name"
-    t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,13 +33,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_092256) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_progress_forms_on_patient_id"
-  end
-
-  create_table "user_profiles", force: :cascade do |t|
-    t.string "user_name"
-    t.string "history"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "progress_forms", "patients"
