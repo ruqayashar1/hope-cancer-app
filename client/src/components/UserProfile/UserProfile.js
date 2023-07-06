@@ -78,7 +78,7 @@ const UserProfile = () => {
     <div className="container my-3">
       <div className="user-profile">
         <div
-          className={`image ${photo ? 'has-photo' : ''}`}
+          className={`image1 ${photo ? 'has-photo' : ''}`}
           style={{
             backgroundImage: `url(${photo})`,
             backgroundSize: 'cover',

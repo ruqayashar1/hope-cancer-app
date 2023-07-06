@@ -10,7 +10,7 @@ const Tracking = () => {
 
   return (
     <div className='tracking'>
-      <h1>Patient Tracking</h1>
+      <h1>WORKING SPACE</h1>
       <nav>
         <ul>
           <li>

@@ -1,0 +1,53 @@
+/* form.css */
+
+.patient_form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patient_form h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .patient_form form {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .patient_form label {
+    font-weight: bold;
+  }
+  
+  .patient_form input[type='number'],
+  .patient_form input[type='text'],
+  .patient_form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .patient_form textarea {
+    resize: vertical;
+  }
+  
+  .patient_form button[type='submit'] {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .patient_form button[type='submit']:hover {
+    background-color: #45a049;
+  }
+  
