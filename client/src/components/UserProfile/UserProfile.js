@@ -82,12 +82,13 @@ const UserProfile = () => {
           style={{
             backgroundImage: `url(${photo})`,
             backgroundSize: 'cover',
+            borderRadius: '50%',
           }}
         >
           {!photo && <span className="placeholder">Add profile photo</span>}
           {photo && (
-            <button  className="btn btn-primary" style={{width: 'fit-content'}} onClick={handleDeletePhoto}>
-              Delete Photo
+            <button className="delete-photo-btn" onClick={handleDeletePhoto}>
+              <i className="fas fa-trash"></i>
             </button>
           )}
         </div>
@@ -127,7 +128,11 @@ const UserProfile = () => {
         <div className="form-group">
           <label htmlFor="history">History:</label>
           {isEditing ? (
-            <textarea id="history" value={history} onChange={(e) => setHistory(e.target.value)}></textarea>
+            <textarea
+              id="history"
+              value={history}
+              onChange={(e) => setHistory(e.target.value)}
+            ></textarea>
           ) : (
             <div className="display-value">{history}</div>
           )}
@@ -135,15 +140,15 @@ const UserProfile = () => {
 
         {isEditing ? (
           <>
-            <button type="submit"  style={{width: 'fit-content'}} className="btn btn-primary">
+            <button type="submit" style={{ width: 'fit-content' }} className="btn btn-primary">
               Save Profile
             </button>
-            <button type="button"  style={{width: 'fit-content'}} className="btn btn-danger" onClick={handleCancelEdit}>
+            <button type="button" style={{ width: 'fit-content' }} className="btn btn-danger" onClick={handleCancelEdit}>
               Cancel
             </button>
           </>
         ) : (
-          <button type="button"  style={{width: 'fit-content'}} className="btn btn-secondary" onClick={handleEditProfile}>
+          <button type="button" style={{ width: 'fit-content' }} className="btn btn-secondary" onClick={handleEditProfile}>
             Edit Profile
           </button>
         )}
@@ -151,16 +156,16 @@ const UserProfile = () => {
 
       <div className="appointment-section">
         <div className="appointment-buttons">
-          <button  className="btn btn-primary" onClick={handleMakeAppointment}>
+          <button className="btn btn-primary" onClick={handleMakeAppointment}>
             Make Appointment
           </button>
           {appointment && !isEditingAppointment && (
             <div>
-              <button  className="btn btn-primary" onClick={handleEditAppointment}>
+              <button className="btn btn-primary" onClick={handleEditAppointment}>
                 Edit Appointment
               </button>
-              <button  className="btn btn-dele btn btn-primaryte" onClick={handleDeleteAppointment}>
-                Delete Appointment
+              <button className="btn btn-delete" onClick={handleDeleteAppointment}>
+                <i className="fas fa-trash"></i>
               </button>
             </div>
           )}
@@ -251,7 +256,7 @@ const UserProfile = () => {
               />
             </div>
 
-            <button  className="btn btn-primary" onClick={handleSaveAppointment}>
+            <button className="btn btn-primary" onClick={handleSaveAppointment}>
               Save Appointment
             </button>
           </div>
