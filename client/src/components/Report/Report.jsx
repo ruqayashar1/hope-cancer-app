@@ -4,8 +4,6 @@ import React from "react";
 function Report() {
     export const Report = (props) => {
         const [progress, setProgress] = useState("");
-        
-      
         const navigate = useNavigate();
       
         function handleSubmit(e) {
