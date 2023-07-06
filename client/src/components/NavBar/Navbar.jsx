@@ -29,11 +29,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({isLoggedin, setLoggedin}) => {
+  const redirect = isLoggedin ? '/user_profile' : '/login';
+  const login = isLoggedin ? 'Logout' : 'Login';
+
   return (
-    <nav>
+    <nav >
         
-        <ul className="navbar-list">
+        <ul className="navbar-list py-4">
         <li className={"navbar-item" }>
           <Link to="/homepage" className="navbar-link">Home</Link>
         </li>
@@ -42,16 +45,16 @@ const Navbar = () => {
         </li>
         
         <li className={"navbar-item" }>
-          <Link to="/login" className="navbar-link">Login</Link>
+          <Link to="/login" className="navbar-link">{login}</Link>
         </li>
         <li className={"navbar-item" }>
-          <Link to="/services" className="navbar-link">Our Services</Link>
+          <Link to={redirect} className="navbar-link">User Profile</Link>
         </li>
         <li className={"navbar-item" }>
           <Link to="/research" className="navbar-link">Educational Research</Link>
         </li>
         <li className={"navbar-item" }>
-          <Link to="/adminlogin" className="navbar-link">Admin Login</Link>
+          <Link to="/admin" className="navbar-link">Admin Login</Link>
         </li>
         {/* <li className="navbar-item">
           <Link to="/signin" className="navbar-link">Sign In</Link>
