@@ -1,4 +1,27 @@
-.tracking{
-    size: 40px;
-    display: space-between;
-}
+
+  .appointment-list {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .appointment-card {
+    border: 3px solid blue;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(55, 55, 170);
+    margin: 10px;
+  }
+  
+  .appointment-card h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .appointment-card p {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+

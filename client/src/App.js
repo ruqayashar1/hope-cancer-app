@@ -17,6 +17,8 @@ import PatientForm from "./components/Progress_form.jsx/Progress_form";
 
 function App() {
   const [isLoggedin, setLoggedin] = useState(false);
+  const [user_email, setUserEmail] = useState(null);
+  const [doctor, setDoctor] = useState(null);
   return (
     <div className="h-100">
       <Navbar isLoggedin={isLoggedin} setLoggedin={setLoggedin}/>
@@ -27,13 +29,13 @@ function App() {
       <Routes>
         <Route path="/homepage" element={<Body />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login setLoggedin={setLoggedin}/>} />
+        <Route path="/login" element={<Login setLoggedin={setLoggedin} setUserEmail={setUserEmail}/>} />
         <Route path="/user_profile" element={<UserProfile />} />
         <Route path="/research" element={<Research />} />
-        <Route path="/UserProfile" element={<UserProfile />} />
-        <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/tracking" element={<Tracking />} />
+        <Route path="/admin" element={<AdminLogin setDoctor={setDoctor}/>} />
+        <Route path="/tracking" element={<Tracking doctor={doctor}/>} />
         <Route path="/patient_form" element={<PatientForm />} />
+
       </Routes>
       <Footer />
     </div>

@@ -6,8 +6,9 @@ resources :progress_forms, only: [:create, :show]
   # root "articles#index"
   post '/signedup', to: 'patients#create'
   post '/loggedin', to: 'sessions#create'
-  get '/patients', to: 'sessions#index'
+  post '/patients', to: 'doctors#all_appointments'
   post '/adminlogin', to: 'doctors#create'
+  post '/appointment', to: 'appointments#create'
   post '/progress_form', to: 'progress_forms#create'
 end
 
