@@ -22,7 +22,7 @@ function Report() {
           {
             console.log(r)
             if (r.ok) {
-              // console.log ("successful")
+              console.log ("successful")
             //  r.json().then((user) => setUser(user));
              
              navigate('/user_profile');

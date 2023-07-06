@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Progress.css'; 
 
 const PatientForm = () => {
   const [patientId, setPatientId] = useState('');
