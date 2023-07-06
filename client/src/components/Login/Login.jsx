@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import "./Login.css";
 
-const Login = ({setLoggedin}) => {
+const Login = ({setLoggedin, setUserEmail}) => {
   const [email, setUsername] = useState(""); // Add this line
 
   const [password, setPass] = useState("");
@@ -13,7 +13,7 @@ const Login = ({setLoggedin}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log({email, password})
+   // console.log({email, password})
     fetch("/loggedin", {
       method: "POST",
       headers: {
@@ -22,9 +22,12 @@ const Login = ({setLoggedin}) => {
       body: JSON.stringify({ email, password }),
     }).then((r) => 
     {
-      console.log(r)
+      //console.log(r)
       if (r.ok) {
+        
+        console.log(email);
         setLoggedin(true);
+        setUserEmail(email);
        // r.json().then((user) => setUser(user));
        navigate('/user_profile');
       }

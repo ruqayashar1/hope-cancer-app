@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './UserProfile.css';
 
-const UserProfile = () => {
+const UserProfile = ({user_email}) => {
+  //console.log(user_email);
   const [photo, setPhoto] = useState('');
   const [name, setName] = useState('John Doe');
   const [userID, setUserID] = useState('12345');
@@ -57,14 +58,33 @@ const UserProfile = () => {
   };
 
   const handleSaveAppointment = () => {
+    console.log(user_email);
+    const doctor = selectedDoctor.replace(/^Dr\.\s*/, '');
     const newAppointment = {
-      cancerType: selectedCancer,
-      doctor: selectedDoctor,
-      conditionSeverity,
-      date: appointmentDate,
-      time: appointmentTime,
-      branch: hospitalBranch,
+      cancer: selectedCancer,
+      doctor: doctor,
+      patient: name,
+      severity: conditionSeverity,
+      appointment_date: appointmentDate,
+      appointment_time: appointmentTime,
+      hospital: hospitalBranch,
     };
+    console.log(newAppointment);
+
+    fetch("/appointment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newAppointment),
+    }).then((r) => {
+      console.log(r);
+      if (r.ok) {
+        //r.json().then((user) => setUser(user));
+        //navigate('/login')
+      }
+    });
+
     setAppointment(newAppointment);
     setIsEditingAppointment(false);
     setIsAppointmentFormVisible(false);

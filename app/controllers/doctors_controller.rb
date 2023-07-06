@@ -1,4 +1,21 @@
 class DoctorsController < ApplicationController
+
+  def all_appointments
+    doctor = Doctor.find_by(name: params[:doctor])
+    appointments = doctor.appointments.map do |appointment|
+      {
+        cancer: appointment.cancer,
+        severity: appointment.severity,
+        appointment_date: appointment.appointment_date,
+        appointment_time: appointment.appointment_time,
+        hospital: appointment.hospital,
+        patient: appointment.patient.name
+      }
+    end
+    render json: appointments
+  end
+    
+
     def create
     
         admin = Doctor.find_by(name: params[:name])
