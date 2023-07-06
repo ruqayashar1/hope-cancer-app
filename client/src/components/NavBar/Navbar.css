@@ -25,3 +25,7 @@
   .navbar-item.active .navbar-link {
     color:#000000;
   }
+  .navbar-item:last-child {
+    margin-left: auto;
+  }
+  

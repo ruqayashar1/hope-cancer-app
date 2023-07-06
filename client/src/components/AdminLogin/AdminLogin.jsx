@@ -12,8 +12,8 @@ export const AdminLogin = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log({name, password})
-    console.log({name, password})
+    console.log("successful")
+    // console.log({name, password})
     fetch("/adminlogin", {
       method: "POST",
       headers: {
@@ -24,8 +24,10 @@ export const AdminLogin = (props) => {
     {
       console.log(r)
       if (r.ok) {
-       // r.json().then((user) => setUser(user));
-       navigate('/user_profile');
+        // console.log ("successful")
+      //  r.json().then((user) => setUser(user));
+       
+       navigate('/tracking');
       }
     });
   }

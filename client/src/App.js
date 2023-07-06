@@ -11,6 +11,8 @@ import Services from "./components/OurServices/OurServices";
 import Research from "./components/Research/Research";
 import UserProfile from "./components/UserProfile/UserProfile";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
+import Tracking from "./components/Tracking/Tracking";
+
 
 function App() {
   const [isLoggedin, setLoggedin] = useState(false);
@@ -29,10 +31,11 @@ function App() {
         <Route path="/research" element={<Research />} />
         <Route path="/UserProfile" element={<UserProfile />} />
         <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/tracking" element={<Tracking />} />
       </Routes>
-
       <Footer />
     </div>
   );
 }
+
 export default App;
