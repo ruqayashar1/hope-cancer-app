@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Progress.css'; 
 
 const PatientForm = () => {
   const [patientId, setPatientId] = useState('');
@@ -7,22 +8,40 @@ const PatientForm = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // Perform any necessary actions with the form data, such as saving to a database
-
-    // Clear the form fields
+    console.log('clicked!')
+    fetch("/progress_form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        patient_id: patientId,
+        name: patientName,
+        progress: progress
+      }),
+    }).then((r) => {
+      console.log(r);
+      if (r.ok) {
+        console.log("submitted")
+        //r.json().then((user) => setUser(user));
+        // navigate('/login')
+      }
+    });
     setPatientId('');
     setPatientName('');
     setProgress('');
-  };
+  }
+  
+  
 
   return (
-    <div>
+    <div className='patient_form'>
       <h2>Enter Patient Information</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="patientId">Patient ID:</label>
           <input
-            type="text"
+            type="number"
             id="patientId"
             value={patientId}
             onChange={(e) => setPatientId(e.target.value)}

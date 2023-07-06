@@ -1,8 +1,15 @@
+
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Tracking.css';
 
 const Tracking = ({doctor}) => {
   const [appointments, setAppointments] = useState([]);
+   const navigate = useNavigate();
+
+  const handlePatientStatusClick = () => {
+    navigate('/patient_form');
+  };
 
   useEffect(() =>{
     fetch("/patients", {
@@ -39,16 +46,19 @@ const Tracking = ({doctor}) => {
 
   }
   
+ 
+      
+
   return (
     <div className='tracking'>
-
-      
-      <h1>Welcome Back, Dr. {doctor}</h1>
-      <h3>You have {appointments.length} upcoming appointments:</h3>
+       <h1>Welcome Back, Dr. {doctor}</h1>
+       <h3>You have {appointments.length} upcoming appointments:</h3>
       <nav>
         <ul>
           <li>
-            <a href="/patient-status">Patient Status</a>
+            <a href="#" onClick={handlePatientStatusClick}>
+              Patient Status
+            </a>
           </li>
           <li>
             <a href="/booking">Bookings</a>
@@ -75,4 +85,3 @@ const Tracking = ({doctor}) => {
 };
 
 export default Tracking;
-

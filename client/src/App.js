@@ -12,6 +12,7 @@ import Research from "./components/Research/Research";
 import UserProfile from "./components/UserProfile/UserProfile";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
 import Tracking from "./components/Tracking/Tracking";
+import PatientForm from "./components/Progress_form.jsx/Progress_form";
 
 
 function App() {
@@ -31,9 +32,10 @@ function App() {
         <Route path="/login" element={<Login setLoggedin={setLoggedin} setUserEmail={setUserEmail}/>} />
         <Route path="/user_profile" element={<UserProfile />} />
         <Route path="/research" element={<Research />} />
-        <Route path="/UserProfile" element={<UserProfile user_email={user_email}/>} />
         <Route path="/admin" element={<AdminLogin setDoctor={setDoctor}/>} />
         <Route path="/tracking" element={<Tracking doctor={doctor}/>} />
+        <Route path="/patient_form" element={<PatientForm />} />
+
       </Routes>
       <Footer />
     </div>
