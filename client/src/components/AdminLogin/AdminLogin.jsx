@@ -66,10 +66,12 @@ export const AdminLogin = ({setDoctor}) => {
                 </button>
               </form>
             ) : (
+              <div className='card p-3'>
               <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="username">Doctor's Username</label>
                 <input
                   value={name}
+                  className='form-control p-2'
                   onChange={(e) => setUsername(e.target.value)}
                   type="username"
                   placeholder="username"
@@ -80,9 +82,10 @@ export const AdminLogin = ({setDoctor}) => {
                 <label htmlFor="password">Password</label>
                 <input
                   value={password}
+                  className='form-control p-2'
                   onChange={(e) => setPass(e.target.value)}
                   type="password"
-                  placeholder="********"
+                  placeholder="****"
                   id="password"
                   name="password"
                   required
@@ -94,6 +97,7 @@ export const AdminLogin = ({setDoctor}) => {
                   Forgot Password?
                 </button>
               </form>
+              </div>
             )}
           </div>
         </div>

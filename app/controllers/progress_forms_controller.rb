@@ -9,19 +9,17 @@ class ProgressFormsController < ApplicationController
         end
     end
 
-    private
-
-    def tracking_params
-        params.permit(:patient_id, :name, :progress)
-    end
-
-end
-
-class ProgressFormsController < ApplicationController
     def show
       progress_form = ProgressForm.find(params[:id])
       render json: progress_form
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Progress form not found" }, status: :not_found
     end
-  end
+    
+    private
+
+    def tracking_params
+        params.permit(:patient_id, :name, :progress)
+    end
+end
+  
