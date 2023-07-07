@@ -64,7 +64,7 @@ const Tracking = ({doctor}) => {
             <a href="/booking">Bookings</a>
           </li>
           <li>
-            <a href="/logout">Logout</a>
+            <a href="/admin">Logout</a>
           </li>
         </ul>
       </nav>
@@ -72,6 +72,7 @@ const Tracking = ({doctor}) => {
           {appointments.map(appointment => (
           <div key={appointment.id} className="appointment-card">
             <h2>{appointment.patient}</h2>
+            <h3>{appointment.patient_id}</h3>
             <p>Cancer: {appointment.cancer}</p>
             <p>Severity: {appointment.severity}</p>
             <p>Date: {appointment.appointment_date}</p>

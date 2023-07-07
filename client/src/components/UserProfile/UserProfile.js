@@ -151,7 +151,7 @@ const UserProfile = ({user_email}) => {
             <textarea
               id="history"
               value={history}
-              onChange={(e) => setHistory(e.target.value)}
+              //onChange={(e) => setHistory(e.target.value)}
             ></textarea>
           ) : (
             <div className="display-value">{history}</div>
@@ -285,12 +285,12 @@ const UserProfile = ({user_email}) => {
         {appointment && !isEditingAppointment && (
           <div className="appointment-details">
             <h3>Appointment Details:</h3>
-            <p>Cancer Type: {appointment.cancerType}</p>
+            <p>Cancer Type: {appointment.cancer}</p>
             <p>Doctor: {appointment.doctor}</p>
-            <p>Condition Severity: {appointment.conditionSeverity}</p>
-            <p>Date: {appointment.date}</p>
-            <p>Time: {appointment.time}</p>
-            <p>Hospital Branch: {appointment.branch}</p>
+            <p>Condition Severity: {appointment.severity}</p>
+            <p>Date: {appointment.appointment_date}</p>
+            <p>Time: {appointment.appointment_time}</p>
+            <p>Hospital Branch: {appointment.hospital}</p>
           </div>
         )}
       </div>

@@ -109,13 +109,17 @@ label {
 
 .appointment-details {
   margin-top: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid white;
+  background-color: #007bff;
   border-radius: 5px;
   padding: 10px;
+  color: white;
+  
 }
 
 .appointment-details h3 {
   margin-top: 0;
+  text-align: center;
 }
 
 .btn-save,
