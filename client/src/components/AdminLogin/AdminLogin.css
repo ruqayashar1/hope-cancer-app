@@ -1,14 +1,17 @@
 .auth-form-container {
-  max-width: 50px;
+  /* max-width: 400px; */
   margin: 0 auto;
   padding: 20px;
   background-color: #f5f5f5;
   border-radius: 5px;
-  height: 100vh; /* Set the height of the container to 100% of the viewport height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  /* flex: 1; */
+  /* height: 100%;
+  width: 100%;*/
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  flex-grow: 0;
+  border: 5px solid whitesmoke;
 }
 
 .auth-form-container h2 {
@@ -18,7 +21,7 @@
 .auth-form-container form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+   gap: 10px; 
 }
 
 .auth-form-container label {
@@ -48,20 +51,40 @@
   text-decoration: underline;
 }
 
-.body {
+
+/* .body{
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
+  background-color: #007bff;
+  max-width: 90%;
+}
+.body img{
+
+} */
+.body {
+  background-color: blue;
+  display: flex;
+ justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  max-width: 90%;
+  max-width:90%;
 }
 
 .body img {
   margin-right: 10px;
-  max-height: 100%; /* Limit the height of the image to fit the available space */
-  object-fit: contain; /* Adjust the object-fit property as desired */
+}
+/* .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer .footer-item .footer-topic {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
+*/
 .footer {
   display: flex;
   justify-content: space-between;
@@ -69,7 +92,7 @@
   margin-bottom: -9px;
   margin-left: -8px;
   margin-right: -8px;
-  padding: 10px;
+  padding:10px;
   background-color: darkcyan;
 }
 
@@ -80,6 +103,7 @@
 
 .social-icons {
   margin-top: 20px;
+  
 }
 
 .social-icons a {
@@ -87,24 +111,27 @@
   margin-right: 10px;
   font-size: 59px;
   transition: color 0.3s ease-in-out;
+  
 }
 
 .social-icons a:hover {
   color: #000000;
 }
 
-.account {
+.account{
   display: flex;
   flex-direction: row;
-  height: 100vh; /* Set the height of the container to 100% of the viewport height */
-  border: 5px solid whitesmoke;
+  /* height: 70vh; */
+  /* width: 100vw; */
+  border: 5px solid red;
+
 }
 
-.image {
-  flex: 1;
-  height: 100%; /* Set the height of the image container to 100% of the parent container */
+.Login image{
+  flex: 0;
+  height: 50%;
   width: 50%;
   flex-grow: 45;
-  object-fit: contain;
-  background-color: rgba(6, 46, 178, 0.987);
+  object-fit:cover;
+  background-color:navy blue;
 }
