@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import "./SignUp.css";
 
@@ -14,7 +14,7 @@ export const SignUp = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('clicked!')
+    console.log("clicked!");
     fetch("/signedup", {
       method: "POST",
       headers: {
@@ -29,11 +29,10 @@ export const SignUp = (props) => {
       console.log(r);
       if (r.ok) {
         //r.json().then((user) => setUser(user));
-        navigate('/login')
+        navigate("/login");
       }
     });
   }
-
 
   return (
     <div className="container-fluid">
@@ -45,60 +44,73 @@ export const SignUp = (props) => {
             className="logo"
           />
           {/* Add this line */}
+          <div className="vstack gap-2 justify-content-center align-items-center">
+            <div className="card p-3" style={{ minWidth: "500px" }}>
+              <h2>Register</h2>
+              <div className="vstack gap-2 justify-content-center align-items-center">
+                <form className="register-form" onSubmit={handleSubmit}>
+                  <label htmlFor="name">Username</label>
 
-          <h2>Register</h2>
+                  <input
+                    value={name}
+                    className="form-control px-4 py-2"
+                    style={{ width: "fit-content" }}
+                    name="name"
+                    onChange={(e) => setName(e.target.value)}
+                    id="name"
+                    placeholder="Full Name"
+                    required
+                  />
 
-          <form className="register-form" onSubmit={handleSubmit}>
-            <label htmlFor="name">Username</label>
+                  <label htmlFor="email">Email</label>
 
-            <input
-              value={name}
-              name="name"
-              onChange={(e) => setName(e.target.value)}
-              id="name"
-              placeholder="Full Name"
-              required
-            />
+                  <input
+                    className="form-control px-4 py-2"
+                    style={{ width: "fit-content" }}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
+                    placeholder="youremail@gmail.com"
+                    id="email"
+                    name="email"
+                    required
+                  />
 
-            <label htmlFor="email">Email</label>
+                  <label htmlFor="password">Password</label>
 
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="youremail@gmail.com"
-              id="email"
-              name="email"
-              required
-            />
+                  <input
+                    className="form-control px-4 py-2"
+                    style={{ width: "fit-content" }}
+                    value={password}
+                    onChange={(e) => setPass(e.target.value)}
+                    type="password"
+                    placeholder="**"
+                    id="password"
+                    name="password"
+                    required
+                  />
 
-            <label htmlFor="password">Password</label>
+                  <button
+                    className="btn btn-primary px-4 mt-3"
+                    style={{ width: "fit-content" }}
+                    type="submit"
+                  >
+                    Register
+                  </button>
+                </form>
 
-            <input
-              value={password}
-              onChange={(e) => setPass(e.target.value)}
-              type="password"
-              placeholder="****"
-              id="password"
-              name="password"
-              required
-            />
-
-            <button type="submit">Register</button>
-          </form>
-
-          <button
-            className="link-btn mt-2"
-            onClick={() => navigate('/login')}
-          >
-            Already have an account? Login here.
-          </button>
+                <button
+                  className="link-btn mt-2"
+                  onClick={() => navigate("/login")}
+                >
+                  Already have an account? Login here.
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="col-md-6 col-12 mx-auto">
-          <img
-            src="sign.jpg"
-            alt="patient"
-          />
+          <img src="sign.jpg" alt="patient" />
         </div>
       </div>
     </div>

@@ -1,37 +1,39 @@
-.auth-form-container {
-
-  width: 50%;
-  
-  height: 50%;
+.register-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-  
-  h2 {
-  
-  margin-bottom: 2px;
-  
+
+.register-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
   text-align: center;
-  
-  }
-  
-  form {
-  
-  display: flex;
-  
-  flex-direction: column;
-  
-  }
+}
+
+.register-form {
+  display:grid;
+  gap: 20px;
+}
+
+.register-form label {
+  font-weight: bold;
+}
   
   label {
   
   font-weight: bold;
-  
-  margin-bottom: 10px;
+  font-size:larger;
+  margin-bottom: 40px;
   
   }
   
   input {
   
-  padding: 10px;
+  padding: 1px;
   
   margin-bottom: 15px;
   
@@ -45,7 +47,7 @@
   
   background-color: #007bff;
   
-  color:white;
+  /* color:white; */
   
   padding: 10px;
   
@@ -73,14 +75,14 @@
   
   .logo {
   
-  display: block; /* Ensures the logo is rendered as a block element */
+  display: block;  
   
-  margin: 0 auto; /* Centers the logo horizontally within its container */
+  margin: 0 auto; 
   
-  width: 150px; /* Set the desired width for the logo */
+  width: 150px; 
   
-  height: auto; /* Adjusts the height automatically while maintaining the aspect ratio */
+  height: auto; 
   
-  margin-bottom: 20px; /* Adds some spacing between the logo and the heading */
-  
+  margin-bottom: 20px; 
   } 
+  

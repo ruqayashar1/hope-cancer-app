@@ -1,9 +1,9 @@
 class AppointmentsController < ApplicationController
     def create
         patient = Patient.find_by(name: params[:patient])
-       # puts patient.id
+    #    puts patient.id
         doctor = Doctor.find_by(name: params[:doctor])
-       # puts doctor.id
+    #    puts doctor.id
 
         appointment = Appointment.create(
             doctor_id: doctor.id,

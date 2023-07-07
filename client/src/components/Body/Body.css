@@ -18,7 +18,7 @@ text-overlay {
 .gallery-image {
   width: 20%;
   height: 30%;
-  margin-right: 2%; /* Add space between gallery images */
+
 }
 
 /* Add space between images and footer */
@@ -28,8 +28,14 @@ footer {
 .homepage{
   color: blue;
   font-weight: 700;
+  align-content: center;
 }
 
+h2{
+  align-content: center;
+  text-align: center;
+  
+}
 
 
 
