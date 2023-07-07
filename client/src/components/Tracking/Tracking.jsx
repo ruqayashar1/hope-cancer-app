@@ -1,5 +1,4 @@
 
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Tracking.css';
@@ -30,20 +29,20 @@ const Tracking = ({doctor}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-   console.log({email, password})
-    fetch("/patients", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ doctor }),
-    }).then((r) => 
-    {
-      //console.log(r)
-      if (r.ok) {
+   // console.log({email, password})
+    // fetch("/patients", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ doctor }),
+    // }).then((r) => 
+    // {
+    //   //console.log(r)
+    //   if (r.ok) {
         
-      }
-    });
+    //   }
+    // });
 
   }
   
